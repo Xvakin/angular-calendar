@@ -1,0 +1,10 @@
+<div class="calendar">
+    <a href="" ng-click="ctrl.moveMonth(-1)"><-</a>
+    {{ ctrl.activeDate | date : 'yyyy MMMM' }}
+    <a href="" ng-click="ctrl.moveMonth(1)">-></a>
+    <table class="calendar-table">
+        <tr ng-repeat="row in ctrl.rows">
+            <td ng-repeat="dt in row">{{ dt | date : 'd' }}</td>
+        </tr>
+    </table>
+</div>
