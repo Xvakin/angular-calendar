@@ -1,0 +1,30 @@
+﻿<div class="calendar">
+    <nav class="calendar-nav">
+        <div class="calendar-nav-prev">
+            <a href="" ng-click="ctrl.moveMonth(-1)"><-</a>
+        </div>
+        <div class="calendar-nav-selects">
+            {{ ctrl.activeDate | date : 'yyyy MMMM d' }}
+        </div>
+        <div class="calendar-nav-next">
+            <a href="" ng-click="ctrl.moveMonth(1)">-></a>
+        </div>
+    </nav>
+
+    <table class="calendar-table">
+        <tr class="calendar-week-days">
+            <td>SU</td>
+            <td>MO</td>
+            <td>TU</td>
+            <td>WE</td>
+            <td>TH</td>
+            <td>FR</td>
+            <td>SA</td>
+        </tr>
+        <tr ng-repeat="row in ctrl.rows">
+            <td class="calendar-table-day" ng-repeat="date in row">
+                <a href="" class="calendar-table-day-link" ng-click="ctrl.selectDate(date)" ng-class="{'m-active': ctrl.isActiveDate(date)}">{{ date | date : 'd' }}</a>
+            </td>
+        </tr>
+    </table>
+</div>
